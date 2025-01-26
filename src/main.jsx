@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import store, { persistor } from "./redux/store";
 import { Toaster } from "react-hot-toast";
-import ErrorBoundary from "./ErrorBoundary"; // Додано ErrorBoundary
+import ErrorBoundary from "./ErrorBoundary";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

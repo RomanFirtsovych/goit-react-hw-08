@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/authOperations";
+import { useNavigate } from "react-router-dom"; 
 import styles from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
@@ -8,11 +9,23 @@ const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate(); 
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(register({ name, email, password }));
+    try {
+      await dispatch(register({ name, email, password })).unwrap();
+      navigate("/tasks"); 
+    } catch (error) {
+      console.error("Registration failed:", error); 
+      alert("Registration failed. Please try again."); 
+    }
   };
+
+  if (isLoggedIn) {
+    navigate("/tasks");
+  }
 
   return (
     <div className={styles.authContainer}>

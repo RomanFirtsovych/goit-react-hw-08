@@ -53,13 +53,11 @@ const contactsSlice = createSlice({
 export const { setFilter } = contactsSlice.actions;
 export default contactsSlice.reducer;
 
-// Селектори
 export const selectContacts = (state) => state.contacts.items;
 export const selectFilter = (state) => state.contacts.filter;
 export const selectIsLoading = (state) => state.contacts.isLoading;
 export const selectError = (state) => state.contacts.error;
 
-// Фільтровані контакти
 export const selectFilteredContacts = (state) => {
   const contacts = selectContacts(state);
   const filter = selectFilter(state).toLowerCase();

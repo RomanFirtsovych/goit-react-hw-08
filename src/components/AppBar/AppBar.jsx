@@ -8,7 +8,7 @@ const AppBar = () => {
         <NavLink to="/" className={styles.link}>
           Home
         </NavLink>
-        <NavLink to="/contacts" className={styles.link}>
+        <NavLink to="/tasks" className={styles.link}>
           Tasks
         </NavLink>
         <NavLink to="/login" className={styles.link}>

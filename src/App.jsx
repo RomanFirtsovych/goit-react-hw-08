@@ -1,36 +1,43 @@
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout/Layout";
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./pages/HomePage/HomePage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import TasksPage from "./pages/TaskPage/TasksPage"; // Сторінка з задачами
+import LoginPage from "./pages/LoginPage/LoginPage";
+import TasksPage from "./pages/TaskPage/TasksPage";
 import PrivateRoute from "./routes/PrivateRoute";
 import RestrictedRoute from "./routes/RestrictedRoute";
 
-const App = () => {
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+    <div>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={RegisterPage} />
+            <RestrictedRoute
+              component={RegisterPage}
+              redirectTo="/tasks"
+            />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={LoginPage} />
+            <RestrictedRoute
+              component={LoginPage}
+              redirectTo="/tasks"
+            />
           }
         />
         <Route
           path="/tasks"
-          element={<PrivateRoute redirectTo="/login" component={TasksPage} />}
+          element={<PrivateRoute component={TasksPage} redirectTo="/login" />}
         />
-      </Route>
-    </Routes>
+      </Routes>
+    </div>
   );
-};
+}
 
 export default App;

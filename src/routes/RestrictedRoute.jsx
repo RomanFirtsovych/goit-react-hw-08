@@ -7,7 +7,7 @@ const RestrictedRoute = ({ component: Component, redirectTo = "/" }) => {
   const isRefreshing = useSelector((state) => state.auth.isRefreshing);
 
   if (isRefreshing) {
-    return <p>Loading...</p>; // Показуємо спінер під час перевірки авторизації
+    return <p>Loading...</p>;
   }
 
   return isLoggedIn ? <Navigate to={redirectTo} /> : <Component />;
