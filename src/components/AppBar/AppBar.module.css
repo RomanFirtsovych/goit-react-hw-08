@@ -1,0 +1,26 @@
+.header {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.link.active {
+    color: #007aff;
+}

@@ -1,0 +1,112 @@
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    padding: 20px;
+}
+
+.taskTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.taskInputContainer {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.taskInput {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.taskInput:focus {
+    border: 1px solid #007aff;
+    box-shadow: 0 3px 8px rgba(0, 122, 255, 0.2);
+    outline: none;
+}
+
+.taskButton {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(to right, #007aff, #005fbb);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.taskButton:hover {
+    background: linear-gradient(to right, #005fbb, #007aff);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.taskButton:active {
+    transform: scale(0.97);
+}
+
+.taskList {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.taskItem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.taskText {
+    font-size: 16px;
+    color: #333;
+}
+
+.deleteButton {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.deleteButton:hover {
+    background-color: #e33e3e;
+}
+
+.deleteButton:active {
+    transform: scale(0.95);
+}

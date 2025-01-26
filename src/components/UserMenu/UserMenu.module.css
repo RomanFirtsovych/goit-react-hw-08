@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userName {
+    font-weight: 600;
+    color: #333;
+}
+
+.logoutButton {
+    background-color: #ff3b30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

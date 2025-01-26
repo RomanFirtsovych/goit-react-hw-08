@@ -1,0 +1,62 @@
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    padding: 20px;
+}
+
+.authTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.authInput {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.authInput:focus {
+    border: 1px solid #007aff;
+    box-shadow: 0 3px 8px rgba(0, 122, 255, 0.2);
+    outline: none;
+}
+
+.authButton {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(to right, #007aff, #005fbb);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.authButton:hover {
+    background: linear-gradient(to right, #005fbb, #007aff);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.authButton:active {
+    transform: scale(0.97);
+}

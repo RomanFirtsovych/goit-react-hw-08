@@ -1,0 +1,98 @@
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contactInfo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.contactName {
+    font-weight: bold;
+}
+
+.contactPhone {
+    font-size: 14px;
+    color: gray;
+}
+
+.deleteButton,
+.editButton,
+.saveButton,
+.cancelButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteButton {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.editButton {
+    background-color: #4d79ff;
+    color: white;
+}
+
+.saveButton {
+    background-color: #4caf50;
+    color: white;
+}
+
+.cancelButton {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.editInput {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.noContactsText {
+    font-size: 18px;
+    color: gray;
+    margin-top: 20px;
+}
