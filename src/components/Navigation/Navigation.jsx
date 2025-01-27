@@ -31,6 +31,14 @@ const Navigation = () => {
           >
             Tasks
           </NavLink>
+          <NavLink
+            to="/contacts"
+            className={({ isActive }) =>
+              isActive ? `${styles["nav-link"]} ${styles["active"]}` : styles["nav-link"]
+            }
+          >
+            Contacts
+          </NavLink>
           <button onClick={handleLogout} className={styles["nav-button"]}>
             Logout
           </button>

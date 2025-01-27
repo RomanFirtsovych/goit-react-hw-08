@@ -12,7 +12,6 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch() {
-    // Ви можете обробити помилку тут (наприклад, відправити її в серверну частину)
   }
 
   render() {
@@ -25,7 +24,7 @@ class ErrorBoundary extends React.Component {
 }
 
 ErrorBoundary.propTypes = {
-  children: PropTypes.node.isRequired, // Валідація пропса `children`
+  children: PropTypes.node.isRequired,
 };
 
 export default ErrorBoundary;
