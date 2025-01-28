@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/auth/authOperations";
+import { logout } from "../../redux/auth/operations";
 import styles from "./Navigation.module.css";
 
 const Navigation = () => {

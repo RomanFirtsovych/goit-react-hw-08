@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../redux/auth/authOperations";
+import { register } from "../../redux/auth/operations";
 import { useNavigate } from "react-router-dom"; 
 import styles from "./RegisterPage.module.css";
 

@@ -8,7 +8,7 @@ import {
   fetchContacts,
   deleteContact,
   addContact,
-} from "../../redux/contacts/contactsOperations";
+} from "../../redux/contacts/operations";
 import styles from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
