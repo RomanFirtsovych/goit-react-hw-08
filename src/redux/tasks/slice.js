@@ -4,7 +4,7 @@ import {
   addContact,
   deleteContact,
   updateContact,
-} from "./tasksOperations";
+} from "./operations";
 
 const contactsSlice = createSlice({
   name: "contacts",

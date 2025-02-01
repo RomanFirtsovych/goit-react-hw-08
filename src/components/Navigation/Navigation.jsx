@@ -1,66 +1,23 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/auth/operations";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-
-  const handleLogout = () => {
-    dispatch(logout());
-  };
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <nav className={styles["nav-container"]}>
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive ? `${styles["nav-link"]} ${styles["active"]}` : styles["nav-link"]
-        }
-      >
-        Home
-      </NavLink>
+    <nav className={styles.nav}>
+      <NavLink to="/" className={styles.link}>Home</NavLink>
+      {isLoggedIn && <NavLink to="/contacts" className={styles.link}>Contacts</NavLink>}
       {isLoggedIn ? (
-        <>
-          <NavLink
-            to="/tasks"
-            className={({ isActive }) =>
-              isActive ? `${styles["nav-link"]} ${styles["active"]}` : styles["nav-link"]
-            }
-          >
-            Tasks
-          </NavLink>
-          <NavLink
-            to="/contacts"
-            className={({ isActive }) =>
-              isActive ? `${styles["nav-link"]} ${styles["active"]}` : styles["nav-link"]
-            }
-          >
-            Contacts
-          </NavLink>
-          <button onClick={handleLogout} className={styles["nav-button"]}>
-            Logout
-          </button>
-        </>
+        <button onClick={() => dispatch(logout())} className={styles.button}>Logout</button>
       ) : (
         <>
-          <NavLink
-            to="/register"
-            className={({ isActive }) =>
-              isActive ? `${styles["nav-link"]} ${styles["active"]}` : styles["nav-link"]
-            }
-          >
-            Register
-          </NavLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive ? `${styles["nav-link"]} ${styles["active"]}` : styles["nav-link"]
-            }
-          >
-            Login
-          </NavLink>
+          <NavLink to="/register" className={styles.link}>Register</NavLink>
+          <NavLink to="/login" className={styles.link}>Login</NavLink>
         </>
       )}
     </nav>

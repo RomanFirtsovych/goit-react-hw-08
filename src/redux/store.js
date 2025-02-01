@@ -1,25 +1,27 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { authReducer } from './auth/authSlice';
-import contactsReducer from './contacts/contactsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import authReducer from "./auth/slice";
+import contactsReducer from "./contacts/slice";
+import filterReducer from "./filters/slice";
 
 const authPersistConfig = {
-  key: 'auth',
+  key: "auth",
   storage,
-  whitelist: ['token'], 
+  whitelist: ["token"], // Зберігаємо токен в localStorage
 };
 
 const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authReducer), 
-    contacts: contactsReducer, 
+    auth: persistReducer(authPersistConfig, authReducer),
+    contacts: contactsReducer,
+    filters: filterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, 
+      serializableCheck: false, // Вимкнено перевірку серіалізації для persist
     }),
 });
 
-export const persistor = persistStore(store); 
+export const persistor = persistStore(store);
 export default store;
