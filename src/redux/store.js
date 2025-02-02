@@ -8,7 +8,7 @@ import filterReducer from "./filters/slice";
 const authPersistConfig = {
   key: "auth",
   storage,
-  whitelist: ["token"], // Зберігаємо токен в localStorage
+  whitelist: ["token"],
 };
 
 const store = configureStore({
@@ -19,7 +19,7 @@ const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, // Вимкнено перевірку серіалізації для persist
+      serializableCheck: false,
     }),
 });
 
